@@ -7,12 +7,12 @@ export default function PostUnico(props){
     const [salvo, setSalvo] = useState("bookmark-outline")
     const [pessoas, setPessoas] = useState(props.qtdPessoas)
 
-    function mudaCurtir(){
+    function mudaCurtir(condition){
         if (curtido === "heart-outline"){
             setCurtido("heart")
             setClassCurtir("curtido")
             setPessoas(pessoas + 1)
-        } else {
+        } else if (condition) {
             setCurtido("heart-outline")
             setClassCurtir("")
             setPessoas(pessoas - 1)
@@ -41,13 +41,13 @@ export default function PostUnico(props){
             </div>
 
             <div className="conteudo">
-                <img src={props.imageBody} alt="" data-test="post-image" onClick={() => mudaCurtir()} />
+                <img src={props.imageBody} alt="" data-test="post-image" onDoubleClick={() => mudaCurtir(false)} />
             </div>
 
             <div className="fundo">
                 <div className="acoes">
                     <div>
-                        <ion-icon name={curtido} class={classCurtir} onClick={() => mudaCurtir()} data-test="like-post" ></ion-icon>
+                        <ion-icon name={curtido} class={classCurtir} onClick={() => mudaCurtir(true)} data-test="like-post" ></ion-icon>
                         <ion-icon name="chatbubble-outline"></ion-icon>
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </div>
