@@ -11,12 +11,10 @@ export default function PostUnico(props){
         if (curtido === "heart-outline"){
             setCurtido("heart")
             setClassCurtir("curtido")
-            console.log(pessoas);
             setPessoas(pessoas + 1)
         } else {
             setCurtido("heart-outline")
             setClassCurtir("")
-            console.log(pessoas);
             setPessoas(pessoas - 1)
         }
     }
@@ -43,7 +41,7 @@ export default function PostUnico(props){
             </div>
 
             <div className="conteudo">
-                <img src={props.imageBody} alt="" data-test="post-image"/>
+                <img src={props.imageBody} alt="" data-test="post-image" onClick={() => mudaCurtir()} />
             </div>
 
             <div className="fundo">

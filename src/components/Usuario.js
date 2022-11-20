@@ -6,13 +6,13 @@ export default function Usuario(){
     const [foto, setFoto] = useState(CatanaComics)
 
     function mudaUsuario(){
-      const usuario = prompt("Qual nome do usuario?")
-      setUsuario(usuario)
+      const usuarioPrompt = prompt("Qual nome do usuario?")
+      setUsuario(usuarioPrompt.length > 0 ? usuarioPrompt : usuario)
     }
 
     function mudaFoto(){
-      const foto = prompt("Qual o link da sua foto ?")
-      setFoto(foto)
+      const fotoPrompt = prompt("Qual o link da sua foto ?")
+      setFoto(fotoPrompt.length > 0 ? fotoPrompt : foto)
     }
 
     return (
