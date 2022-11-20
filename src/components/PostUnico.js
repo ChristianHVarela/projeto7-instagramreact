@@ -31,7 +31,7 @@ export default function PostUnico(props){
     
 
     return (
-        <div className="post">
+        <div className="post" data-test="post">
             <div className="topo">
                 <div className="usuario">
                     <img src={props.imagePerfil} alt="" />
@@ -43,25 +43,25 @@ export default function PostUnico(props){
             </div>
 
             <div className="conteudo">
-                <img src={props.imageBody} alt="" />
+                <img src={props.imageBody} alt="" data-test="post-image"/>
             </div>
 
             <div className="fundo">
                 <div className="acoes">
                     <div>
-                        <ion-icon name={curtido} class={classCurtir} onClick={() => mudaCurtir()} ></ion-icon>
+                        <ion-icon name={curtido} class={classCurtir} onClick={() => mudaCurtir()} data-test="like-post" ></ion-icon>
                         <ion-icon name="chatbubble-outline"></ion-icon>
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </div>
                     <div>
-                        <ion-icon name={salvo} onClick={() => mudaSalvar()} ></ion-icon>
+                        <ion-icon name={salvo} onClick={() => mudaSalvar()} data-test="save-post" ></ion-icon>
                     </div>
                 </div>
 
                 <div className="curtidas">
                     <img src={props.imageFinal} alt="" />
                     <div className="texto">
-                        Curtido por <strong>{props.curtidoPor}</strong> e <strong>outras {pessoas} pessoas</strong>
+                        Curtido por <strong>{props.curtidoPor}</strong> e <strong data-test="likes-number" >outras {pessoas} pessoas</strong>
                     </div>
                 </div>
             </div>
